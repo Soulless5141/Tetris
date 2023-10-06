@@ -1,21 +1,34 @@
+/*********************************
+* プログラミング実習(テトリス編)
+*********************************/
 #include"DxLib.h"
 #include"FreamControl.h"
 #include"SceneManager.h"
 #include"InputControl.h"
 
-//マクロ定義
+/******************
+* マクロ定義
+******************/
 #define SCREEN_HEIGHT (720)
 #define SCREEN_WIDTH (1280)
 #define SCREEN_COLORBIT (32)
 #define FONT_SIZE (20)
 
-//型定義
+/***********************
+* 型定義
+***********************/
 
-//グローバル変数宣言
+/***********************
+* グローバル宣言
+***********************/
 
-//プロトタイプ宣言
+/***********************
+* プロトタイプ宣言
+***********************/
 
-//プログラムの開始
+/***********************
+* プログラムの開始
+***********************/
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR ipCmdLine, _In_ int nShowCmd)
 {
