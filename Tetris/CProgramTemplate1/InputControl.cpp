@@ -34,7 +34,7 @@ KEY_STATE button_state[XINPUT_BUTTON_MAX];   //各ボタン入力状態
 ******************************/
 void InputControl_Initialize(void)
 {
-	int i;
+	int i;           //ループカウンタ
 
 	//入力状態の初期化
 	for (i = 0; i < XINPUT_BUTTON_MAX; i++)

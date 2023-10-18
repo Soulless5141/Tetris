@@ -3,8 +3,8 @@
 /***********************
 * マクロ定義
 ***********************/
-#define RANKING_INPUT_MOOE (1)
-#define RANKING_DISP_MOOE  (2)
+#define RANKING_INPUT_MODE (1)
+#define RANKING_DISP_MODE  (2)
 
 /***********************
 * 型定義
