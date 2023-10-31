@@ -12,7 +12,7 @@
 ***********************/
 enum {
 	E_TITLE_BGM,
-	E_TITLE_SE_CURSOR,
+	E_TITLE_SE_CURSOR,	
 	E_TITLE_SE_SELECT,
 	E_SOUND_MAX
 };
@@ -77,6 +77,9 @@ void TitleScene_Update(void)
 		{
 			case 0:
 				Change_Scene(E_GAMEMAIN);
+				break;
+			case 1:
+				Change_Scene(E_RANKING);
 				break;
 			case 2:
 			default:

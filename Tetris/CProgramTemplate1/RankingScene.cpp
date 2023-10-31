@@ -108,7 +108,7 @@ void RankingScene_Draw(void)
 	default:
 		for (i = 0; i < RANKING_MAX; i++)
 		{
-			DrawFormatString(20, 10 + (i * 25), GetColor(255, 255, 255), " % 2d,%10s,%10d",
+			DrawFormatString(20, 10 + (i * 25), GetColor(255, 255, 255), "%2d,%10s,%10d",
 				Ranking_Data[i].rank, Ranking_Data[i].name, Ranking_Data[i].score);
 		}
 		break;
@@ -186,7 +186,7 @@ void file_write(void)
 	{
 		for (i = 0; i < RANKING_MAX; i++)
 		{
-			fprintf(fp, "%2d,%[^,],%10d\n", &Ranking_Data[i].rank,
+			fprintf(fp, "%2d,%[^,],%10d\n", Ranking_Data[i].rank,
 				Ranking_Data[i].name, Ranking_Data[i].score);
 		}
 		fclose(fp);
@@ -207,9 +207,9 @@ void ranking_sort(void)
 	Ranking_Data[RANKING_MAX - 1] = New_Score;
 
 	//データのソートを行う
-	for (i = 0; i < RANKING_MAX; j++)
+	for (i = 0; i < RANKING_MAX; i++)
 	{
-		for(j=i+1;j<RANKING_MAX;j++)
+		for (j = i + 1; j < RANKING_MAX; j++)
 		{
 			if (Ranking_Data[i].score < Ranking_Data[j].score)
 			{

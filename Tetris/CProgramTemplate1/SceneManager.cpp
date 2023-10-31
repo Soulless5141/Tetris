@@ -88,7 +88,7 @@ void SceneManager_Update(void)
 		break;
 	case E_END:
 	default:
-		EndScene_Update;
+		EndScene_Update();
 		break;
 	}
 }
@@ -100,12 +100,6 @@ void SceneManager_Update(void)
 ******************************/
 void SceneManager_Draw(void)
 {
-	//前フレームとゲームモードが違っていたらシーンを切り替える
-	if (game_mode != next_mode)
-	{
-		SceneManager_Initialize(next_mode);
-	}
-
 	//各画面の描画処理
 	switch (game_mode)
 	{
@@ -120,7 +114,7 @@ void SceneManager_Draw(void)
 		break;
 	case E_END:
 	default:
-		EndScene_Draw;
+		EndScene_Draw();
 		break;
 	}
 }
