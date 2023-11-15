@@ -30,19 +30,19 @@ typedef struct
 * グローバル宣言
 ***********************/
 T_RANKING Ranking_Data[RANKING_MAX];    //ランキングデータ
-T_RANKING New_Score;
-int DispMode;
+T_RANKING New_Score;                         //新しいスコアデータ
+int DispMode;                                    //表示モード
 
-T_CURSOR Cursor;
+T_CURSOR Cursor;                                  //カーソル用変数
 int name_num;
 /***********************
 * プロトタイプ宣言
 ***********************/
-void file_read(void);
-void file_write(void);
-void ranking_sort(void);
-void ranking_input_name(void);
-void ranking_input_name_draw(void);
+void file_read(void);                     //ファイル読み込み
+void file_write(void);                    //ファイル書き込み
+void ranking_sort(void);                  //ランキングソート処理
+void ranking_input_name(void);            //名前入力処理
+void ranking_input_name_draw(void);       //名前入力描画処理
 
 /****************************************
 * ランキング画面:初期化処理
@@ -186,7 +186,7 @@ void file_write(void)
 	{
 		for (i = 0; i < RANKING_MAX; i++)
 		{
-			fprintf(fp, "%2d,%[^,],%10d\n", Ranking_Data[i].rank,
+			fprintf(fp, "%2d,%s,%10d\n", Ranking_Data[i].rank,
 				Ranking_Data[i].name, Ranking_Data[i].score);
 		}
 		fclose(fp);
@@ -290,7 +290,10 @@ void ranking_input_name(void)
 			}
 			else if (Cursor.x == 10)
 			{
-				name_num--;
+				if (name_num > 0)
+				{
+					name_num--;
+				}
 				New_Score.name[name_num] = '\0';
 			}
 			else
