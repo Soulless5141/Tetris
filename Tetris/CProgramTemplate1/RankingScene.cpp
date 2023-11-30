@@ -327,8 +327,13 @@ void ranking_input_name_draw(void)
 	{
 		DrawFormatString((i % 13 * 50) + 300, (i / 13 * 50) + 530, GetColor(255, 255, 255), "%-3c", '0' + i);
 	}
-
+	
 	DrawFormatString(300, 220, GetColor(255, 255, 255), ">%s", New_Score.name);
+
+	SetFontSize(37);
+	DrawFormatString(791, 530, GetColor(255, 255, 255), "è¡");
+	DrawFormatString(842, 530, GetColor(255, 255, 255), "åà");
+	DrawFormatString(892, 530, GetColor(255, 255, 255), "èI");
 
 	SetFontSize(20);
 

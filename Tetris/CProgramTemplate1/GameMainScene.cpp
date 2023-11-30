@@ -18,6 +18,7 @@ int BackGround_image;   //背景画像イメージ
 int BackGround_sound;   //BGM
 int GameOver_sound;          //ゲームオーバーSE
 int Score;                        //スコア
+int Level;                //レベル
 
 /***********************
 * プロトタイプ宣言
@@ -64,6 +65,16 @@ void GameMainScene_Update(void)
 
 	Score = Get_Line() * 50;
 
+	//レベル更新
+	if (Level < 5)
+	{
+		Level = Score / 500 + 1;
+		if (Level > 5)
+		{
+			Level = 5;
+		}
+	}
+
 	//生成できなくなったら
 	if (Get_GenerateFlg() != TRUE)
 	{
@@ -88,6 +99,8 @@ void GameMainScene_Draw(void)
 	SetFontSize(100);
 	//スコアを描画
 	DrawFormatString(700, 100, GetColor(255, 255, 255), "%d", Score);
+	//レベルの描画
+	DrawFormatString(700, 240, GetColor(255, 255, 255), "%d", Level);
 	SetFontSize(20);
 }
 
@@ -99,4 +112,14 @@ void GameMainScene_Draw(void)
 int Get_Score(void)
 {
 	return Score;
+}
+
+/******************************
+* ゲームメイン画面:レベル取得処理
+* 引　数:なし
+* 戻り値:なし
+******************************/
+int Get_Level(void)
+{
+	return Level;
 }

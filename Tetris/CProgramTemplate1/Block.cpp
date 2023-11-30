@@ -1,6 +1,7 @@
 #include"Block.h"
 #include"Dxlib.h"
 #include"InputControl.h"
+#include"GameMainScene.h"
 
 /*************************************
 * マクロ定義
@@ -16,7 +17,7 @@
 #define BLOCK_STOCK_POS_Y  (350)     //ストックされたブロックの座標(y座標)
 #define DROP_BLOCK_INIT_X  (4)       //落ちてくるブロックの初期X座標
 #define DROP_BLOCK_INIT_Y  (-1)      //落ちてくるブロックの初期Y座標
-#define DROP_SPEED             (60)  //落下時間
+#define DROP_SPEED              (60)//落下時間
 #define TURN_CROCKWICE         (0)   //時計回りに回転させる
 #define TURN_ANTICROCKWICE (1)       //反時計回りに回転させる
 
@@ -196,7 +197,8 @@ void Block_Update(void)
 	}
 
 	//落下処理
-	WaitTime++;   //カウンタの更新
+	WaitTime += Get_Level() * 1;   //カウンタの更新
+
 	if (WaitTime > DROP_SPEED)
 	{
 		if (check_overlap(DropBlock_X, DropBlock_Y + 1) == TRUE)
