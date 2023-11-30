@@ -87,7 +87,7 @@ void GameMainScene_Draw(void)
 	Block_Draw();
 	SetFontSize(100);
 	//ƒXƒRƒA‚ð•`‰æ
-	DrawFormatString(800, 100, GetColor(255, 255, 255), "%d", Score);
+	DrawFormatString(700, 100, GetColor(255, 255, 255), "%d", Score);
 	SetFontSize(20);
 }
 

@@ -175,6 +175,7 @@ void Block_Update(void)
 {
 	//ブロックの移動処理
 	move_block();
+	check_line();
 
 	//ブロックのストック
 	if ((GetButtonDown(XINPUT_BUTTON_LEFT_SHOULDER) == TRUE) ||
